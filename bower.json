@@ -1,0 +1,28 @@
+{
+  "name": "angular-devtrw-filters",
+  "main": ["dist/dtrw.filters-d2f64ea4.js"],
+  "version": "1.0.0",
+  "description": "Provides common angular filters used in DevTRW projects",
+  "authors": [
+    "Steven Nance <steven@devtrw.com>"
+  ],
+  "keywords": ["angular", "angularjs", "javascript", "filter", "filters"],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+    "src"
+  ],
+  "overrides": {
+    "angular": {
+      "ignore": true
+    }
+  },
+  "dependencies": { },
+  "devDependencies": {
+    "angular": "*",
+    "angular-mocks": "~1.3.15"
+  }
+}
