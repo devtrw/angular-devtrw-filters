@@ -3,6 +3,7 @@
 var del              = require('del');
 var gulp             = require('gulp');
 var gAngularFilesort = require('gulp-angular-filesort');
+var gBump            = require('gulp-bump');
 var gConcat          = require('gulp-concat');
 var gFilter          = require('gulp-filter');
 var gInject          = require('gulp-inject');
@@ -168,4 +169,10 @@ gulp.task('lint', function () {
     .pipe(gJshint('./.jshintrc'))
     .pipe(gJshint.reporter(jshintStylish))
     .pipe(gJshint.reporter('fail'));
+});
+
+gulp.task('bump-version', function () {
+  return gulp.src(['./bower.json', './package.json'])
+    .pipe(gBump())
+    .pipe(gulp.dest('./'));
 });

@@ -12,8 +12,9 @@ module.exports = function (karma) {
     files: [
       "bower_components/angular/angular.js",
       "bower_components/angular-mocks/angular-mocks.js",
-      "dist/dtrw.filters-d2f64ea4.js",
-      "src/components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test.js"
+      "dist/dtrw.filters-117b6c38.js",
+      "src/components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test.js",
+      "src/components/uc-first/uc-first-filter_test.js"
       ],
 
     frameworks: ['mocha', 'chai', 'sinon', 'chai-as-promised'],

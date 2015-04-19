@@ -1,1 +1,0 @@
-angular.module("dtrw.filters.hyphenated-to-camel-case",[]),function(e){e.filter("hyphenatedToCamelCase",function(){return function(e){return e.replace(/-([a-z])/g,function(e){return e[1].toUpperCase()})}})}(angular.module("dtrw.filters.hyphenated-to-camel-case")),angular.module("dtrw.filters",["dtrw.filters.hyphenated-to-camel-case"]);
