@@ -12,7 +12,7 @@ module.exports = function (karma) {
     files: [
       "bower_components/angular/angular.js",
       "bower_components/angular-mocks/angular-mocks.js",
-      "dist/dtrw.filters-117b6c38.js",
+      "dist/dtrw.filters-da5402e6.js",
       "src/components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test.js",
       "src/components/uc-first/uc-first-filter_test.js"
       ],

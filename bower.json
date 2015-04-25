@@ -1,9 +1,9 @@
 {
   "name": "angular-devtrw-filters",
   "main": [
-    "dist/dtrw.filters-117b6c38.js"
-  ],
-  "version": "1.0.1",
+    "dist/dtrw.filters-da5402e6.js"
+    ],
+  "version": "1.0.2",
   "description": "Provides common angular filters used in DevTRW projects",
   "authors": [
     "Steven Nance <steven@devtrw.com>"
