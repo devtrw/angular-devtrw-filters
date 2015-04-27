@@ -1,70 +1,72 @@
-module.exports = function (karma) {
+var path = require('path');
+var deepExtend = require('deep-extend');
+var webpackConfig = require('./webpack.config');
 
-  karma.set({
-    /**
-     * From where to look for files, starting with the location of this file.
-     */
-    basePath: '.',
+var testConfig = deepExtend({}, webpackConfig, {
+  entry: './filters_test.js'
+});
 
-    /**
-     * Filled by the task `gulp karma-conf`
-     */
+var entry = path.resolve(testConfig.context, testConfig.entry);
+
+var preprocessors = {};
+preprocessors[entry] = ['webpack'];
+
+module.exports = function (config) {
+  config.set({
+
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: './',
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['mocha', 'chai'],
+
+    // list of files / patterns to load in the browser
     files: [
-      "bower_components/angular/angular.js",
-      "bower_components/angular-mocks/angular-mocks.js",
-      "dist/dtrw.filters-da5402e6.js",
-      "src/filters_test.js",
-      "src/components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test.js",
-      "src/components/uc-first/uc-first-filter_test.js"
-      ],
-
-    frameworks: ['mocha', 'chai', 'sinon', 'chai-as-promised'],
-    plugins:    [
-      'karma-mocha',
-      'karma-chai',
-      'karma-sinon',
-      'karma-phantomjs-launcher',
-      'karma-chai-plugins'
+      'node_modules/angular/angular.js',
+      entry
     ],
 
-    /**
-     * How to report, by default.
-     */
-    reporters: 'progress',
+    webpack: testConfig,
 
-    /**
-     * Show colors in output?
-     */
+    // list of files to exclude
+    exclude: [],
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: preprocessors,
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['progress'],
+
+    // web server port
+    port: 9876,
+
+    // enable / disable colors in the output (reporters and logs)
     colors: true,
 
-    /**
-     * On which port should the browser connect, on which port is the test runner
-     * operating, and what is the URL path for the browser to use.
-     */
-    port:       9099,
-    runnerPort: 9100,
-    urlRoot:    '/',
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
 
-    /**
-     * Disable file watching by default.
-     */
+    // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-    /**
-     * The list of browsers to launch to test on. This includes only "Firefox" by
-     * default, but other browser names include:
-     * Chrome, ChromeCanary, Firefox, Opera, Safari, PhantomJS
-     *
-     * Note that you can also use the executable name of the browser, like "chromium"
-     * or "firefox", but that these vary based on your operating system.
-     *
-     * You may also leave this blank and manually navigate your browser to
-     * http://localhost:9099/ when you're running tests. The window/tab can be left
-     * open and the tests will automatically occur there during the build. This has
-     * the aesthetic advantage of not launching a browser every time you save.
-     */
-    browsers: [
-      'PhantomJS'
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['PhantomJS'],
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: false,
+
+    plugins: [
+      require('karma-webpack'),
+      'karma-chai',
+      'karma-mocha',
+      'karma-phantomjs-launcher'
     ]
   });
 };

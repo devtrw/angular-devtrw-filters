@@ -1,24 +1,26 @@
-describe('dtrw.filters.uc-first', function () {
+import ngModule from './uc-first';
+
+describe(ngModule.name, () => {
   var $filter;
 
-  beforeEach(function () {
-    module('dtrw.filters.uc-first');
+  beforeEach(() => {
+    window.module(ngModule.name);
 
-    inject(function ($injector) {
+    inject($injector => {
       $filter = $injector.get('$filter');
     });
   });
 
-  it('should convert the first character in a string to uppercase', function () {
+  it('should convert the first character in a string to uppercase', () => {
     assert.equal($filter('ucFirst')('test'), 'Test');
   });
 
-  it('should not explode on empty or undefined strings', function () {
+  it('should not explode on empty or undefined strings', () => {
     assert.equal($filter('ucFirst')(''), '', 'empty strings should be returned as is');
     assert.equal($filter('ucFirst')(), '', 'undefined should be returned as empty string');
   });
 
-  it('should handle strings with numeric first chars', function () {
+  it('should handle strings with numeric first chars', () => {
     assert.equal($filter('ucFirst')('1twoThree'), '1twoThree');
   });
 });

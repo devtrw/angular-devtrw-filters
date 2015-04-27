@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="dtrw.filters">
+ <head lang="en" >
+   <meta charset="UTF-8">
+   <title>Angular DevTRW Filters Demo</title>
+ </head>
+<body>
+  <h1>Angular DevTRW Filters Demo</h1>
+
+  <h2>hyphenatedToCamelCase</h2>
+  <b>Before:</b> some-hyphenated-text
+  <br>
+  <b>After:</b> {{ 'some-hyphenated-text' | hyphenatedToCamelCase }}
+
+  <h2>ucFirst</h2>
+  <b>Before:</b> someString
+  <br>
+  <b>After:</b> {{ 'someString' | ucFirst }}
+
+
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../dist/dtrw.filters.min.js"></script>
+</body>
+</html>

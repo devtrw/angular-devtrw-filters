@@ -1,15 +1,17 @@
-describe('dtrw.filters.hyphenated-to-camel-case', function () {
+import ngModule from './hyphenated-to-camel-case';
+
+describe(ngModule.name, () => {
   var $filter;
 
-  beforeEach(function () {
-    module('dtrw.filters.hyphenated-to-camel-case');
+  beforeEach(() => {
+    window.module(ngModule.name);
 
-    inject(function ($injector) {
+    inject($injector => {
       $filter = $injector.get('$filter');
     });
   });
 
-  it('should convert hyphenated strings to camel case', function () {
+  it('should convert hyphenated strings to camel case', () => {
     assert.equal(
       $filter('hyphenatedToCamelCase')('some-hyphenated-string'),
       'someHyphenatedString'
