@@ -1,7 +1,8 @@
 import 'angular-mocks/angular-mocks';
 
-import './components/uc-first/uc-first-filter_test';
 import './components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test';
+import './components/order-object-by/order-object-by-filter_test';
+import './components/uc-first/uc-first-filter_test';
 
 import filters from './filters';
 
@@ -20,5 +21,8 @@ describe(filters.name, () => {
   });
   it('should have the hyphenatedToCamelCase filter defined', () => {
     assert.isFunction($filter('hyphenatedToCamelCase'));
+  });
+  it('should have the orderObjectBy filter', () => {
+    assert.isFunction($filter('orderObjectBy'));
   });
 });
