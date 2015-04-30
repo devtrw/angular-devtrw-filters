@@ -16,5 +16,13 @@ describe(ngModule.name, () => {
       $filter('hyphenatedToCamelCase')('some-hyphenated-string'),
       'someHyphenatedString'
     );
+    assert.equal(
+      $filter('hyphenatedToCamelCase')('some-hyphenated-1-with-numbers-0'),
+      'someHyphenated1WithNumbers0'
+    );
+    assert.equal(
+      $filter('hyphenatedToCamelCase')('with-$-symbols-=andStuff'),
+      'with$Symbols=andStuff'
+    );
   });
 });
