@@ -2,6 +2,7 @@ import 'angular-mocks/angular-mocks';
 
 import './components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test';
 import './components/order-object-by/order-object-by-filter_test';
+import './components/phone/phone-filter_test';
 import './components/uc-first/uc-first-filter_test';
 
 import filters from './filters';
@@ -24,5 +25,8 @@ describe(filters.name, () => {
   });
   it('should have the orderObjectBy filter', () => {
     assert.isFunction($filter('orderObjectBy'));
+  });
+  it('should have the phone filter', () => {
+    assert.isFunction($filter('phone'));
   });
 });
