@@ -1,17 +1,17 @@
 {
   "name": "angular-devtrw-filters",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "Steven Nance <steven@devtrw.com>",
-  "homepage": "https://github.com/devtrw/patient-forms",
+  "homepage": "https://github.com/devtrw/angular-devtrw-filters",
   "repository": {
     "type": "git",
-    "url": "git://github.com/devtrw/patient-forms.git"
+    "url": "git://github.com/devtrw/angular-devtrw-filters.git"
   },
   "main": "dist/dtrw.filters.js",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://raw.githubusercontent.com/devtrw/patient-forms/master/LICENSE"
+      "url": "https://raw.githubusercontent.com/devtrw/angular-devtrw-filters/master/LICENSE"
     }
   ],
   "scripts": {

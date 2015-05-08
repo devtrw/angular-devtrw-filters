@@ -3,7 +3,7 @@
   "main": [
     "dist/dtrw.filters.js"
     ],
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Provides common angular filters used in DevTRW projects",
   "authors": [
     "Steven Nance <steven@devtrw.com>"
@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "angular": "*",
+    "angular": "*"
   },
   "devDependencies": { }
 }
