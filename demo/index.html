@@ -17,6 +17,13 @@
   <br>
   <b>After:</b> {{ 'someString' | ucFirst }}
 
+  <h2>camelToSnakeCase</h2>
+  <b>Before:</b> someCamelCaseText
+  <br>
+  <b>After:</b> {{ 'someCamelCaseText' | camelToSnakeCase }}
+  <br>
+  <b>After (with capitalize flag set):</b> {{ 'someCamelCaseText' | camelToSnakeCase:true }}
+
 
   <script src="../node_modules/angular/angular.min.js"></script>
   <script src="../dist/dtrw.filters.min.js"></script>

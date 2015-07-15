@@ -1,5 +1,6 @@
 import 'angular-mocks/angular-mocks';
 
+import './components/camel-to-snake-case/camel-to-snake-case-filter_test';
 import './components/hyphenated-to-camel-case/hyphenated-to-camel-case-filter_test';
 import './components/order-object-by/order-object-by-filter_test';
 import './components/phone/phone-filter_test';
@@ -16,6 +17,9 @@ describe(filters.name, () => {
     inject($injector => {
       $filter = $injector.get('$filter');
     });
+  });
+  it('should have the camel-to-snake-case filter defined', () => {
+    assert.isFunction($filter('camelToSnakeCase'));
   });
   it('should have the uc-first filter defined', () => {
     assert.isFunction($filter('ucFirst'));
